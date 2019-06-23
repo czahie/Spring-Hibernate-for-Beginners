@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+
+import javax.annotation.PostConstruct;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -19,6 +22,14 @@ public class FileFortuneService implements FortuneService {
 	public Random random = new Random();
 	
 	public FileFortuneService() {
+		System.out.println(">> FileFortuneService: inside default method");
+	}
+	
+	// init method
+	@PostConstruct
+	public void initializeData() {
+		// print out helper message
+		System.out.println(">> FileFortuneService: inside init method");
 		
 		File myFile = new File(fileName);
 		fortunes = new ArrayList<>();
