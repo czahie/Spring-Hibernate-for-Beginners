@@ -11,4 +11,7 @@ public class MembershipDAO {
 		return true;
 	}
 
+	public void goSleep() {
+		System.out.println(getClass() + ": I'm goint to sleep now...");
+	}
 }
